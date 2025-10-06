@@ -29,7 +29,7 @@ def load_pt_model():
         nn.Dropout(p=0.5),
         nn.Linear(num_ftrs, len(class_names))
     )
-    model.load_state_dict(torch.load('weights/resnet_weights_weather.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('weights/resnet_weights_weather.pth', map_location='cpu', weights_only=False))
     model.eval()
     return model
 
